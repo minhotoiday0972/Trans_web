@@ -1,0 +1,16 @@
+Khi thu âm: 
+Frontend                          Backend
+AudioRecorder                    ModelService
+    ↓                                ↓
+Ghi âm → audioBlob → /api/audio/upload → PhoWhisper → Text tiếng Việt
+                                      → MarianMT → Text tiếng Anh
+    ↓                                ↓
+TranscriptionResult ← JSON Response ←
+
+Khi nhập văn bản:
+Frontend                          Backend
+TextInput                        ModelService
+    ↓                                ↓
+Text → /api/text/translate → MarianMT → Text tiếng Anh
+    ↓                                ↓
+TranscriptionResult ← JSON Response ←
